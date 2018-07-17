@@ -5,6 +5,7 @@
 在Ubuntu安装Scrapy的步骤为：打开终端**\>\>**在终端输入命令：pip install
 scrapy**\>\>**在终端输入命令：scrapy version**\>\>**成功输出
 Scrapy版本号则证明成功安装。
+![image](https://github.com/LZC6244/Python/blob/master/images/img1.jpg)
 
 **2. Redis（Ubuntu）**
 
@@ -15,6 +16,7 @@ no使得启动redis-server时可以明显看出redis-
 server已启动**\>\>**在终端输入命令：redis-server
 redis.conf（以redis.conf为配置文件启动redis-server）**\>\>**成功则显示redis-
 server启动界面。
+![image](https://github.com/LZC6244/Python/blob/master/images/img2.jpg)
 
 **3. Redis（Win10）**
 
