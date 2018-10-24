@@ -18,8 +18,7 @@
 （以管理员权限用sublime text3（可用其他编辑器）编辑redis.conf文件）
 >> 将redis.conf中的daemonize设置为daemonize no
 （使得启动redis-server时可以明显看出redis-server已启动）
->> 在终端输入命令：redis-server
-redis.conf（以redis.conf为配置文件启动redis-server）
+>> 在终端输入命令：redis-server redis.conf（以redis.conf为配置文件启动redis-server）
 >> 成功则显示redis-server启动界面。
 ```
 ![image](https://github.com/LZC6244/Python/blob/master/images/img2.jpg)  
