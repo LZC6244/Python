@@ -127,7 +127,7 @@ Pipeline、Middleware、Spider等所有组件的所有动作，且可自定义�
 
 在物理PC机启动redis-cli客户端，往redis-server服务器端压入第一个URL请求
 ```
-“lpush tencentspider:start_urls *https://hr.tencent.com/position.php*”
+“lpush tencentspider:start_urls https://hr.tencent.com/position.php”
 ```
 ![image](https://github.com/LZC6244/Python/blob/master/images/img17.jpg)
 
