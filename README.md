@@ -2,7 +2,7 @@
 ---
 ### 环境
 
-**1. Scrapy**
+#### 1. Scrapy
 ```
 在Ubuntu安装Scrapy的步骤为：
 打开终端 >> 在终端输入命令：pip install scrapy
@@ -11,7 +11,7 @@
 ```
 ![image](https://github.com/LZC6244/Python/blob/master/images/img1.jpg)
 
-**2. Redis（Ubuntu）**
+#### 2. Redis（Ubuntu）
 ```
 打开终端 >> 在终端输入命令：pip install redis
 >> 在终端输入命令：sudo subl redis.conf
@@ -25,7 +25,7 @@ redis.conf（以redis.conf为配置文件启动redis-server）
 ![image](https://github.com/LZC6244/Python/blob/master/images/img2.jpg)  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img3.jpg)
 
-**3. Redis（Win10）**
+#### 3. Redis（Win10）
 ```
 打开浏览器 >> 输入以下网址“https://github.com/MicrosoftArchive/redis/releases” 下载Redis的zip压缩包
 >> 本文下载的是Redis-x64-3.2.100.zip
@@ -41,7 +41,7 @@ redis.conf（以redis.conf为配置文件启动redis-server）
 ![image](https://github.com/LZC6244/Python/blob/master/images/img5.jpg)  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img6.jpg)
 
-**4. Redis Desktop Manager（Win10）**
+#### 4. Redis Desktop Manager（Win10）
 ```
 打开浏览器 >> 输入以下网址“https://redisdesktop.com/download”
 下载Redis Desktop Manager的exe文件
@@ -54,14 +54,14 @@ redis.conf（以redis.conf为配置文件启动redis-server）
 ![image](https://github.com/LZC6244/Python/blob/master/images/img8.jpg)  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img9.jpg)
 
-**5. MongoDB**
+#### 5. MongoDB
 ```
 打开终端 >> 输入命令：sudo apt-get install mongodb
 >> 再在终端输入命令：mongo –version，安装成功则输出MongoDB版本号
 ```
 ![image](https://github.com/LZC6244/Python/blob/master/images/img10.jpg)
 
-**6. Robo 3T**
+#### 6. Robo 3T
 ```
 为了方便管理MongoDB，我们安装了Robo 3T。
 Robo 3T是一个MongoDB的可视化工具。安装步骤如下：
@@ -79,7 +79,7 @@ Robo 3T是一个MongoDB的可视化工具。安装步骤如下：
 
 ### 各模块作用
 
-**1. items**
+#### 1. items
 ```
 爬虫抓取数据的工作实际上是从非结构化数据（网页）中提取出结构化数据。
 虽然Scrapy框架爬虫可以将提取到的数据以Python字典的形式返回，但是由于
@@ -88,7 +88,7 @@ Python字典缺少结构，所以很容易发生返回数据不一致亦或者�
 因此，Scrapy框架提供了一个items模块来定义公共的输出格式，
 其中的Item对象是一个用于收集Scrapy爬取的数据的简单容器。
 ```
-**2. Downloader Middleware**
+#### 2. Downloader Middleware
 ```
 Downloader Middleware是一个Scrapy能全局处理Response和Request的、微型的系统.
 Downloader Middleware中定义的
@@ -100,7 +100,7 @@ Downloader Middleware设有优先级顺序，
 一个用于随机选择爬虫程序执行时的IP地址。
 ```
 
-**3. settings**
+#### 3. settings
 ```
 settings模块用于用户自定义Scrapy框架中
 Pipeline、Middleware、Spider等所有组件的所有动作，且可自定义变量或者日志动作。
@@ -112,19 +112,19 @@ Pipeline、Middleware、Spider等所有组件的所有动作，且可自定义�
 
 **Master端为Win10物理机,Slave端为两个相同配置的Ubuntu虚拟机**
 
-**1. 启动Master端的redis-server**
+#### 1. 启动Master端的redis-server
 
 启动成功如图，可以看出redis-server的运行端口为6379，版本号为3.2.100  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img14.jpg)
 
-**2. 启动两个Slave端的爬虫程序**
+#### 2. 启动两个Slave端的爬虫程序
 
 启动两个Slave端的爬虫程序，使其进入等待状态，等待Master端对其分配请求，此时爬虫程序
 已启动中间件和管道功能，并紧随其后启动爬虫功能，由于刚启动爬虫，此时爬取的网页数为0。  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img15.jpg)  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img16.jpg)
 
-**3. 向Master端添加第一个URL请求**
+#### 3. 向Master端添加第一个URL请求
 
 在物理PC机启动redis-cli客户端，往redis-server服务器端压入第一个URL请求
 ```
@@ -132,7 +132,7 @@ Pipeline、Middleware、Spider等所有组件的所有动作，且可自定义�
 ```
 ![image](https://github.com/LZC6244/Python/blob/master/images/img17.jpg)
 
-**4.数据展示（Redis）及验证**
+#### 4.数据展示（Redis）及验证
 
 两个Slave端爬取完数据后，数据存储在Master端的Redis数据库。  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img18.jpg)
@@ -141,7 +141,7 @@ Pipeline、Middleware、Spider等所有组件的所有动作，且可自定义�
 ![image](https://github.com/LZC6244/Python/blob/master/images/img19.jpg)  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img20.jpg)
 
-**5.数据展示（MongoDB）**
+#### 数据展示（MongoDB）
 
-在本次分布式爬虫的最后，我们将爬取到的数据从Redis数据库转存入本地MongoDB数据库（save_2_mongodb.py）。  
+**在本次分布式爬虫的最后，我们将爬取到的数据从Redis数据库转存入本地MongoDB数据库（save_2_mongodb.py）。**  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img21.jpg)
