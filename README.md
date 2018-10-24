@@ -142,5 +142,5 @@ Pipeline、Middleware、Spider等所有组件的所有动作，且可自定义�
 
 #### 数据展示（MongoDB）
 
-**在本次分布式爬虫的最后，我们将爬取到的数据从Redis数据库转存入本地MongoDB数据库（save_2_mongodb.py）。**  
+在本次分布式爬虫的最后，我们将爬取到的数据从Redis数据库转存入本地MongoDB数据库（save_2_mongodb.py）。  
 ![image](https://github.com/LZC6244/Python/blob/master/images/img21.jpg)
